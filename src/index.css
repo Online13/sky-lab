@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+/* Editor chrome in the manner of a design tool: compact dark panels, 11–13 px
+   type, one blue accent. The UI always floats over the sky, so it has a
+   single (dark) theme. */
+@theme {
+  --color-panel: #2c2c2c;
+  --color-panel-raised: #383838;
+  --color-line: #ffffff1a;
+  --color-ink: #ffffff;
+  --color-ink-muted: #b3b3b3;
+  --color-ink-faint: #8a8a8a;
+  --color-accent: #0d99ff;
+}
+
+body {
+  background: #020617;
+  color-scheme: dark;
+}
+
+/* Camera shutter: a burst of white that fades, softer when motion is
+   reduced. */
+@keyframes flash {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes flash-soft {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* The shot shrinks from the whole screen into a print… */
+@keyframes print {
+  from {
+    transform: scale(1.35) rotate(0deg);
+  }
+}
+
+/* …and its picture develops out of the white. */
+@keyframes develop {
+  from {
+    filter: brightness(2.2) saturate(0.4);
+  }
+}
+
+/* A hint shown on entering the immersive mode, then gone. */
+@keyframes hint {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
