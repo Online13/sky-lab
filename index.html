@@ -2,12 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sky Lab</title>
+    <title>Sky Lab · A sky simulated in your browser</title>
+    <meta
+      name="description"
+      content="Sky Lab renders a living sky in real time with WebGL: time of day, clouds, wind, rain and snow, moon phases, stars and sunsets. Take a photo or share the sky as a link."
+    />
+    <meta name="author" content="Nekena Rayane RATIARIVELO" />
+    <meta name="creator" content="Nekena Rayane RATIARIVELO" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#1d3b8f" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://sky-lab.nekena-rayane.com/" />
+    <link rel="author" href="https://nekena-rayane.com/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sky Lab" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://sky-lab.nekena-rayane.com/" />
+    <meta
+      property="og:title"
+      content="Sky Lab · A sky simulated in your browser"
+    />
+    <meta
+      property="og:description"
+      content="Run the hours, change the weather, send a plane or a shooting star across, then take the sky as a photo or share it as a link."
+    />
+    <meta
+      property="og:image"
+      content="https://sky-lab.nekena-rayane.com/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Pink evening clouds over a blue sky, with the title Sky Lab"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sky Lab · A sky simulated in your browser"
+    />
+    <meta
+      name="twitter:description"
+      content="Run the hours, change the weather, send a plane or a shooting star across, then take the sky as a photo or share it as a link."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sky-lab.nekena-rayane.com/og-image.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Pink evening clouds over a blue sky, with the title Sky Lab"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Sky Lab",
+        "url": "https://sky-lab.nekena-rayane.com/",
+        "description": "A sky simulated frame by frame in the browser: time of day, clouds, rain and snow, moon phases, stars and sunsets.",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires WebGL2",
+        "image": "https://sky-lab.nekena-rayane.com/og-image.jpg",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": {
+          "@type": "Person",
+          "name": "Nekena Rayane RATIARIVELO",
+          "url": "https://nekena-rayane.com/",
+          "sameAs": ["https://github.com/Online13"]
+        },
+        "license": "https://opensource.org/licenses/MIT"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>Sky Lab needs JavaScript and WebGL2 to draw the sky.</noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -2,6 +2,7 @@ import { clamp } from './atmosphere'
 
 // Lunar albedo map from NASA's CGI Moon Kit (LRO / LROC, public domain),
 // equirectangular with longitude 0 (the centre of the near side) in the middle.
+// Stored pre-reduced to 160×80 greyscale: the sky only keeps ALBEDO_WIDTH texels.
 const ALBEDO_URL = `${import.meta.env.BASE_URL}moon.jpg`
 // Brings the bright highlands of the map close to white at full moon.
 const ALBEDO_GAIN = 1.5
