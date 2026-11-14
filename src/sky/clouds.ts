@@ -431,6 +431,11 @@ export class CloudLayer {
   private stretch = 1
   private time = 0
 
+  // False when the browser gives no WebGL2 context: the sky has no clouds.
+  get supported() {
+    return this.gl !== null
+  }
+
   constructor() {
     this.gl = this.canvas.getContext('webgl2', {
       alpha: true,

@@ -2,6 +2,7 @@ import {
   type MouseEvent,
   type Ref,
   useEffect,
+  useEffectEvent,
   useImperativeHandle,
   useRef,
 } from 'react'
@@ -18,16 +19,20 @@ type Props = {
   ref?: Ref<SkyHandle>
   params: SkyParams
   onClick: (target: 'moon' | 'sky') => void
+  // Called once when the browser cannot draw the clouds.
+  onNoClouds: () => void
 }
 
-export function SkyCanvas({ ref, params, onClick }: Props) {
+export function SkyCanvas({ ref, params, onClick, onNoClouds }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const rendererRef = useRef<SkyRenderer>(null)
+  const reportNoClouds = useEffectEvent(onNoClouds)
 
   useEffect(() => {
     const canvas = canvasRef.current!
     const renderer = new SkyRenderer(canvas)
     rendererRef.current = renderer
+    if (!renderer.hasClouds) reportNoClouds()
     const observer = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect
       renderer.resize(width, height)

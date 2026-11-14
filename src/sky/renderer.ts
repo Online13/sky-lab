@@ -103,6 +103,11 @@ export class SkyRenderer {
     )
   }
 
+  // False when the clouds cannot be drawn (no WebGL2).
+  get hasClouds() {
+    return this.clouds.supported
+  }
+
   // The sky as last drawn, at full resolution.
   snapshot() {
     return new Promise<Blob>((resolve, reject) =>

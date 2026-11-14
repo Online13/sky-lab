@@ -40,6 +40,8 @@ function App() {
   const [view, setView] = useState<View>('editor')
   const [flash, setFlash] = useState(false)
   const [photo, setPhoto] = useState<Photo | null>(null)
+  // Shown when the browser cannot draw the clouds, until dismissed.
+  const [noClouds, setNoClouds] = useState(false)
   const onChange = (patch: Partial<SkyParams>) =>
     setParams((p) => ({ ...p, ...patch }))
 
@@ -155,6 +157,7 @@ function App() {
           !hidden &&
           setPanel((p) => (target === 'moon' && p !== 'moon' ? 'moon' : null))
         }
+        onNoClouds={() => setNoClouds(true)}
       />
 
       <div
@@ -193,7 +196,31 @@ function App() {
         </div>
 
         {/* When: the most used control, at the bottom under the hand. */}
-        <div className="pointer-events-none absolute inset-x-3 bottom-3 z-20 flex justify-center">
+        <div className="pointer-events-none absolute inset-x-3 bottom-3 z-20 flex flex-col items-center gap-2">
+          {noClouds && (
+            <p
+              role="status"
+              className="pointer-events-auto flex max-w-full items-center gap-2 rounded-xl bg-black/55 py-1.5 pr-1.5 pl-3 text-[11px] text-white/90 backdrop-blur-sm"
+            >
+              Clouds need WebGL2: turn on hardware acceleration in your browser
+              settings.
+              <button
+                type="button"
+                aria-label="Dismiss"
+                onClick={() => setNoClouds(false)}
+                className="grid size-5 shrink-0 place-items-center rounded-full text-white/70 hover:bg-white/15 hover:text-white focus-visible:outline-2 focus-visible:outline-accent"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden className="size-3">
+                  <path
+                    d="M6 6l12 12M18 6L6 18"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </p>
+          )}
           <TimerBar
             hour={params.hour}
             // Setting the hour by hand stops the clock.
