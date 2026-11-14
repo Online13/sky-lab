@@ -45,6 +45,15 @@ bun run dev      # dev server
 bun run build    # type-check and production build
 ```
 
+## Deploy
+
+The site is served as static assets by a Cloudflare Worker (`wrangler.jsonc`).
+
+```sh
+bunx wrangler login   # once
+bun run deploy        # build, then upload dist/
+```
+
 ## Contributing
 
 1. Fork the repo and create a branch from `main`.
