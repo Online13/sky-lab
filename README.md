@@ -69,6 +69,10 @@ bun run deploy        # build, then upload dist/
 4. Open a pull request that describes the change, with a screenshot when it
    changes what the sky looks like.
 
+## Credits
+
+Built with [Claude](https://claude.ai), Anthropic's AI assistant.
+
 ## License
 
 [MIT](LICENSE)
