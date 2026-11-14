@@ -4,6 +4,8 @@ A sky simulated frame by frame in the browser. No photos, no video: the colour
 of the air, the clouds, the sun, the moon, the stars and the rain all come from
 the settings you choose.
 
+![Sky Lab at 07:19, sunrise with scattered clouds and light rain](docs/screenshot.jpg)
+
 ## Features
 
 - **Time of day**: follows the device clock, or scrub the hours by hand and play
